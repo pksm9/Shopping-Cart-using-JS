@@ -2,57 +2,70 @@ let shop = document.getElementById("shop");
 
 let shopItemsData = [
   {
-    id: "vererv",
+    id: "s001",
     name: "Casual Shirt",
     price: 45,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "",
+    img: "images/s001.jpg",
   },
   {
-    id: "vererv",
+    id: "s002",
     name: "Casual Shirt",
     price: 45,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "",
+    img: "images/s002.jpg",
   },
   {
-    id: "vererv",
+    id: "s003",
     name: "Casual Shirt",
     price: 45,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "",
+    img: "images/s003.jpg",
   },
   {
-    id: "vererv",
+    id: "s004",
     name: "Casual Shirt",
     price: 45,
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-    img: "",
+    img: "images/s004.jpg",
   },
 ];
 
+let basket = [];
+
 let generateShop = () => {
   return (shop.innerHTML = shopItemsData
-    .map((x)=>{
-        let {id, name, price, desc, img} = x
-    return `
+    .map((x) => {
+      let { id, name, price, desc, img } = x;
+      return `
     <div id=product-id-${id} class="item">
-            <img width="220" src=${img} alt="">
+            <img width="220" height="250" src=${img} alt="">
             <div class="details">
                 <h3>${name}</h3>
                 <p>${desc}</p>
                 <div class="price-quantity">
-                    <h2>$ ${price}</h2>
-                    <div class="button">
-                        <i class="bi bi-dash-lg"></i>
+                    <h3>$ ${price}</h3>
+                    <div class="buttons">
+                        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
                         <div id=${id} class="quantity">0</div>
-                        <i class="bi bi-plus-lg"></i>
+                        <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
                     </div>
                 </div>
             </div>
         </div>
-    `
-  }).join(""));
+    `;
+    })
+    .join(""));
 };
 
 generateShop();
+
+let increment = (id) => {
+  let selectedItem = id;
+  console.log(selectedItem.id);
+};
+let decrement = (id) => {
+  let selectedItem = id;
+  console.log(selectedItem.id);
+};
+let update = () => {};
