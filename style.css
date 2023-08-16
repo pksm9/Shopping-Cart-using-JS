@@ -12,6 +12,11 @@ i {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+    color: #fca311;
+}
+
 /**! navbar styles */
 .navbar {
     background-color: #14213d;
